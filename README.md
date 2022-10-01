@@ -20,7 +20,6 @@ The goal of the project is to make a demo for the File Manager application. An a
     - [Commons modules](#commons-modules)
 - [Resources](#resources)
 - [Tech Debt](#tech-debt)
-- [Next Action](#next-action)
 
 ## Building application
 
