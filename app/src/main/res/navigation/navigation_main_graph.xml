@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_main_graph"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.filemanager.features.home.HomeFragment"
+        android:label="HomeFragment">
+
+        <action
+            android:id="@+id/action_list"
+            app:destination="@+id/list_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/file_manager_fragment"
+        android:name="com.filemanager.explorer.view.FileManagerFragment"
+        android:label="HomeFragment">
+    </fragment>
+
+
+</navigation>

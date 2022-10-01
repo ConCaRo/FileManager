@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.dynamic-feature'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+dependencies {
+    implementation project(":app")
+    implementation project(":core")
+    implementation project(":common:ui")
+    implementation Dependencies.NAVIGATION_FRAGMENT
+    implementation Dependencies.NAVIGATION_UI
+    implementation Dependencies.CONSTRAIN_LAYOUT
+    implementation Dependencies.CORE_KTX
+    implementation Dependencies.APPCOMPAT
+    implementation Dependencies.MATERIAL
+    implementation Dependencies.DAGGER
+    implementation(Dependencies.COROUTINES)
+    implementation(Dependencies.COROUTINES_ANDROID)
+    implementation(Dependencies.TIMBER)
+
+    implementation(Dependencies.LIFECYCLE_VIEWMODEL)
+    implementation(Dependencies.LIFECYCLE_RUNTIME_KTX)
+    implementation(Dependencies.LIFECYCLE_LIVEDATA_KTX)
+
+    kapt(AnnotationProcessorsDependencies.DAGGER)
+    kapt AnnotationProcessorsDependencies.ROOM
+
+    testImplementation TestDependencies.ASSERTJ
+    testImplementation TestDependencies.JUNIT
+    testImplementation TestDependencies.ROOM
+    testImplementation TestDependencies.CORE
+    testImplementation TestDependencies.ARCH_CORE
+    testImplementation TestDependencies.COROUTINES_TEST
+    testImplementation TestDependencies.MOCKK
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.annotation:annotation:1.4.0'
+}
