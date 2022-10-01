@@ -47,7 +47,6 @@ dependencies {
 
     testImplementation TestDependencies.ASSERTJ
     testImplementation TestDependencies.JUNIT
-    testImplementation TestDependencies.ROOM
     testImplementation TestDependencies.CORE
     testImplementation TestDependencies.ARCH_CORE
     testImplementation TestDependencies.COROUTINES_TEST

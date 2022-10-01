@@ -13,6 +13,11 @@ The goal of the project is to make a demo for the File Manager application. An a
     - [1. Use Android Studio](#1-use-android-studioa-nameandroid_studioa)
     - [2. Use Gradle Command](#2-use-gradle-commanda-namegradle_commanda)
 - [Architecture](#architecture)
+  - [Modules](#modules)
+    - [App module](#app-module)
+    - [Core module](#core-module)
+    - [Features modules](#features-modules)
+    - [Commons modules](#commons-modules)
 - [Resources](#resources)
 - [Tech Debt](#tech-debt)
 - [Next Action](#next-action)
@@ -80,6 +85,16 @@ Currently, we just use the `feature:app` but I let the `feature:home` as the con
 <p align="center">
  <img src="screenshots/feature_dependencies.png">
 </p>
+
+##### Module Explorer
+
+This is the main feature for the app. The main UI is `FileManagerFragment` containing 2 child fragments `BreadcrumbFragment` and `ListFileFragment`
+The container shares `FileManagerFragmentViewModel` for child fragments. Using `FileManagerFragment`, we can move this fragment to other place easily (maybe activity or other fragments)
+
+<p align="center">
+ <img src="screenshots/explorer_module.png">
+</p>
+
 
 #### Commons modules
 
